@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Timer from './components/Timer';
 
 export default function Home() {
   return (
@@ -52,6 +53,9 @@ export default function Home() {
               <li>Test and tune: swap weak cards after games — a good starter deck should be tuned by 5–10 changes.</li>
             </ul>
           </section>
+
+          {/* Add Timer Component */}
+          <Timer />
         </main>
 
         <aside className="panel side">
@@ -89,7 +93,7 @@ export default function Home() {
               <div className="small muted">Useful links</div>
               <nav style={{marginTop: '6px'}}>
                 <a href="https://en.onepiece-cardgame.com/" target="_blank">Official Site</a>
-                <a href="#" style={{marginLeft: '6px'}}>It's expensive</a>
+                <a href="#" style={{marginLeft: '6px'}}>It&apos;s expensive</a>
               </nav>
             </div>
           </div>
