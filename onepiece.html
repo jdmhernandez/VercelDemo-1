@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>One Piece TCG — How to Start (Starter Guide)</title>
+<style>
+  /* Simple, clean, friendly styling */
+  :root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --accent:#ef6c4e;
+    --muted:#6b7280;
+    --glass: rgba(255,255,255,0.7);
+    --mono: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{font-family:var(--mono); margin:0; background:linear-gradient(180deg,#f4f6f8 0%, #e9eef2 100%); color:#111; line-height:1.45}
+  .wrap{max-width:980px;margin:24px auto;padding:20px}
+  header{display:flex;align-items:center;gap:12px}
+  h1{margin:0;font-size:1.6rem}
+  .sub{color:var(--muted); font-size:0.95rem}
+  .grid{display:grid;grid-template-columns:1fr 320px; gap:16px; margin-top:18px}
+  .panel{background:var(--card); border-radius:10px; padding:16px; box-shadow:0 6px 18px rgba(15,23,42,0.08)}
+  .side{position:sticky; top:18px}
+  button{background:var(--accent); color:white; border:0; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:600}
+  .btn-ghost{background:transparent;color:var(--accent); border:1px solid rgba(0,0,0,0.06)}
+  nav a{display:inline-block;margin-right:8px;color:var(--accent); text-decoration:none}
+  section h2{font-size:1.05rem;margin:0 0 8px}
+  .muted{color:var(--muted); font-size:0.95rem}
+  ul{margin:8px 0 12px 20px}
+  .card{padding:10px;border-radius:8px;background:linear-gradient(180deg,var(--glass),#fff);border:1px solid rgba(0,0,0,0.04)}
+  pre{background:#0b1220;color:#dbeafe;padding:12px;border-radius:8px;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-size:0.92rem}
+  .small{font-size:0.92rem;color:var(--muted)}
+  .decklist{font-family:ui-monospace,monospace;background:#fcfcfc;border:1px dashed #e6e6e6;padding:8px;border-radius:6px}
+  .toggle{margin:8px 0}
+  .legend{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{padding:6px 8px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,0.06);font-weight:600}
+  .tips{margin-top:10px}
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+  .example-card{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+  .color-dot{width:18px;height:18px;border-radius:4px;display:inline-block}
+  .red{background:#ef5b4a} .green{background:#3dbb7b} .blue{background:#5aa9f0} .yellow{background:#f3c14b} .purple{background:#b97fe6}
+  .show-hide{cursor:pointer;color:var(--accent); text-decoration:underline; background:none; border:none; padding:0}
+  @media (max-width:880px){.grid{grid-template-columns:1fr;}.side{position:relative;top:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,#fff,#ffece6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#bf3f2f">OP</div>
+    <div>
+      <h1>One Piece TCG — Starter Guide</h1>
+      <div class="sub">Quick setup, deck building rules, sample decks & play tips to get you playing fast.</div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <main class="panel">
+      <section id="start">
+        <h2>1) Quick Start — how a game begins</h2>
+        <p class="muted">This is a short walkthrough to let you start a friendly match ASAP.</p>
+        <ol>
+          <li><strong>Choose a Leader:</strong> Your Leader determines the color(s) your deck can use.</li>
+          <li><strong>Build a 50-card deck:</strong> Choose only cards that match your Leader's color(s). Leader cards may have dual colors — if so you can include both colors.</li>
+          <li><strong>Shuffle & Draw:</strong> Draw 7 cards. If you don't like your hand, you may mulligan by shuffling back and drawing 6, 5, ... down to 1.</li>
+          <li><strong>Decide First Player:</strong> Use dice/coin to decide who goes first.</li>
+          <li><strong>Play:</strong> Follow the turn structure (Draw, Main, Attack, End).</li>
+        </ol>
+        <div class="card small">
+          <strong>Leader color rule (important):</strong>
+          <div class="small">You may only include cards that share a color with your Leader. Example: Red Leader → only Red cards; Red/Green Leader → Red and Green cards allowed.</div>
+        </div>
+      </section>
+
+      <hr style="margin:16px 0">
+
+      <section id="deckbuild">
+        <h2>2) Building a deck — practical tips</h2>
+        <ul>
+          <li>Stick to a clear plan: <em>rush/aggression</em> (damage early), <em>midrange/control</em> (value trades), or <em>combo</em>.</li>
+          <li>Count your energy/cost curve: include lower cost cards for early pressure and a few higher cost finishers.</li>
+          <li>Include draw/search effects and a few removal or bounce effects to handle threats.</li>
+          <li>Test and tune: swap weak cards after games — a good starter deck should be tuned by 5–10 changes.</li>
+        </ul>
+      </section>
+
+      <hr style="margin:16px 0">
+
+      <section id="sample">
+        <h2>3) Sample starter decks (copy and adapt)</h2>
+        <p class="muted">These are small, friendly starter lists — not tournament lists. Use them as a template.</p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+          <button onclick="showDeck('luffy')">Show Luffy (Red) Starter</button>
+          <button onclick="showDeck('uta')" class="btn-ghost">Show Uta (Starter)</button>
+        </div>
+
+        <div id="deckArea" class="toggle" style="margin-top:12px"></div>
+
+        <div class="tips">
+          <h3 style="margin:8px 0 6px">How to use these lists:</h3>
+          <ul>
+            <li>Start with a 50-card base: you can copy these and add/remove similar cards.</li>
+            <li>Practice mulligans to improve your starting hand reliability.</li>
+            <li>Record wins/losses after adjustments so you can see what works.</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr style="margin:16px 0">
+
+      <section id="turns">
+        <h2>4) Turn phases (simple)</h2>
+        <ol>
+          <li><strong>Draw Phase:</strong> Draw 1 card (first player may skip this on turn 1 depending on rules).</li>
+          <li><strong>Main Phase:</strong> Play characters, events, activate abilities.</li>
+          <li><strong>Attack Phase:</strong> Declare attacks with characters. Attacks can damage opposing characters or Leader (depending on ability/type).</li>
+          <li><strong>End Phase:</strong> Resolve end-of-turn triggers, opponent readies their turn.</li>
+        </ol>
+        <p class="small">(This is a simplified overview — check the rulebook for precise timing windows and keyword interactions.)</p>
+      </section>
+
+      <hr style="margin:16px 0">
+
+      <section id="tipsplay">
+        <h2>5) Practical tips that matter</h2>
+        <ul>
+          <li><strong>Play tight early:</strong> If your deck is aggressive, take initiative and force bad trades.</li>
+          <li><strong>Value trades:</strong> If playing midrange/control, trade efficiently — lose less value than you give.</li>
+          <li><strong>Know your Leader:</strong> Leaders define your strategy — build around them, not the other way round.</li>
+          <li><strong>Mulligan smart:</strong> Don’t keep a useless hand just because you fear fewer cards; a good hand is better than more bad cards.</li>
+        </ul>
+      </section>
+
+      <hr style="margin:16px 0">
+
+      <section id="faq">
+        <h2>6) FAQ</h2>
+        <div>
+          <strong>Q: Can I play cards of other colors?</strong>
+          <p class="small">Only if your Leader allows those colors. Example: Dual-color Leader lets you use both its colors.</p>
+
+          <strong>Q: How many copies of a card?</strong>
+          <p class="small">Standard limit is up to 4 copies of a non-unique card, but check the latest official banlist or rules — starter decks may have specific limits.</p>
+
+          <strong>Q: Where to practice?</strong>
+          <p class="small">Local game stores, online communities, or tabletop nights are great. Playing lots improves your deck intuition the fastest.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="panel side">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h3 style="margin:0">Cheat Sheet</h3>
+          <div class="small muted">Quick reminders</div>
+        </div>
+        <div style="text-align:right"><button onclick="document.getElementById('start').scrollIntoView()">Start</button></div>
+      </div>
+
+      <hr style="margin:12px 0">
+
+      <div class="card">
+        <div class="example-card">
+          <div style="flex:1">
+            <strong>Leader Rule</strong>
+            <div class="small muted">Deck colors must match Leader colors</div>
+          </div>
+          <div style="text-align:right">
+            <div class="color-dot red"></div>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div style="flex:1">
+            <strong>Deck Size</strong>
+            <div class="small muted">Exactly 50 cards (not including Leader)</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <div class="small muted">Useful links</div>
+          <nav style="margin-top:6px">
+            <a href="https://en.onepiece-cardgame.com/" target="_blank">Official Site</a>
+            <a href="#" onclick="alert('Search your local store for OP events')" style="margin-left:6px">Find Events</a>
+          </nav>
+        </div>
+      </div>
+
+      <hr style="margin:12px 0">
+
+      <div>
+        <strong>Colors & common styles</strong>
+        <div class="legend" style="margin-top:8px">
+          <div class="chip"><span class="color-dot red" style="margin-right:8px"></span>Red — Aggro</div>
+          <div class="chip"><span class="color-dot green" style="margin-right:8px"></span>Green — Utility/Board</div>
+          <div class="chip"><span class="color-dot blue" style="margin-right:8px"></span>Blue — Control/Tempo</div>
+          <div class="chip"><span class="color-dot yellow" style="margin-right:8px"></span>Yellow — Combo/Support</div>
+          <div class="chip"><span class="color-dot purple" style="margin-right:8px"></span>Purple — Disruption</div>
+        </div>
+      </div>
+
+      <hr style="margin:12px 0">
+
+      <div>
+        <strong>Quick practice drills</strong>
+        <ol style="padding-left:18px">
+          <li>Play 5 games with same deck; change 2 cards after each loss.</li>
+          <li>Practice mulligan choices: record how often you win after mulliganing 1, 2, or 3 cards.</li>
+          <li>Play mirrors: helps learn early decisions and optimal curves.</li>
+        </ol>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="muted">Saved this? Great — now go shuffle and play. If you want a downloadable starter deck file or printable deck list, tell me which deck and I'll prepare it.</footer>
+</div>
+
+<script>
+  // Interactive deck toggles & sample deck data (small friendly lists)
+  const decks = {
+    luffy: {
+      title: "Luffy (Red) — Starter (sample 50-card template)",
+      desc: "Aggressive, early pressure. Swap or upgrade after testing.",
+      list: [
+        "Leader: Monkey D. Luffy (Red)",
+        "",
+        "Characters (28):",
+        "4x Luffy, Determined (1 cost)",
+        "4x Luffy's Ally (1 cost)",
+        "4x Straw Hat Fighter (2 cost)",
+        "4x Rising Threat (2 cost)",
+        "4x Heavy Hit (3 cost)",
+        "4x Veteran Attacker (3 cost)",
+        "4x Finisher (4 cost)",
+        "",
+        "Events & Items (16):",
+        "4x Quick Strike (Event)",
+        "4x Power Boost (Event)",
+        "4x Emergency Heal (Event)",
+        "4x Fuel for Battle (Item)",
+        "",
+        "Backups / Tech (6):",
+        "2x Draw Utility",
+        "2x Removal",
+        "2x Extra Energy"
+      ]
+    },
+    uta: {
+      title: "Uta — Starter (sample 50-card template)",
+      desc: "Theme/utility focused. Emphasizes events and synergy.",
+      list: [
+        "Leader: Uta (Color depends on Leader print — sample assumes Blue)",
+        "",
+        "Characters (24):",
+        "4x Uta's Choir (1 cost)",
+        "4x Supporting Singer (1 cost)",
+        "4x Melodic Fighter (2 cost)",
+        "4x Harmony Support (2 cost)",
+        "4x Stage Master (3 cost)",
+        "4x Encore (3 cost)",
+        "",
+        "Events & Items (18):",
+        "4x Song of Energy (Event)",
+        "4x Crowd Control (Event)",
+        "4x Healing Chorus (Event)",
+        "4x Tempo Shift (Event)",
+        "2x Search/Draw",
+        "",
+        "Backups / Tech (8):",
+        "4x Draw engines",
+        "4x Spot removal or bounce"
+      ]
+    }
+  };
+
+  function showDeck(key){
+    const target = document.getElementById('deckArea');
+    const data = decks[key];
+    if(!data) return;
+    let html = `<h3 style="margin:6px 0">${data.title}</h3>`;
+    html += `<div class="small muted">${data.desc}</div>`;
+    html += `<div class="decklist" style="margin-top:8px"><pre>${data.list.join("\n")}</pre></div>`;
+    html += `<div style="margin-top:8px"><button onclick="downloadDeck('${key}')">Download as .txt</button> <button class="btn-ghost" onclick="copyDeck('${key}')">Copy to clipboard</button></div>`;
+    target.innerHTML = html;
+    target.scrollIntoView({behavior:'smooth'});
+  }
+
+  function downloadDeck(key){
+    const name = key + "-starter-deck.txt";
+    const content = decks[key].list.join("\n");
+    const blob = new Blob([content], {type: "text/plain"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function copyDeck(key){
+    const content = decks[key].list.join("\n");
+    navigator.clipboard.writeText(content).then(()=> {
+      alert('Deck copied to clipboard. Paste into your deck builder or text editor.');
+    }, ()=> {
+      alert('Copy failed — your browser may block clipboard. Try downloading instead.');
+    });
+  }
+
+  // On first load show Luffy
+  showDeck('luffy');
+</script>
+</body>
+</html>
